@@ -135,25 +135,25 @@
             // 
             // gvName
             // 
-            this.gvName.DataPropertyName = "gvName";
+            this.gvName.DataPropertyName = "Name";
             this.gvName.HeaderText = "Name";
             this.gvName.Name = "gvName";
             // 
             // gvGender
             // 
-            this.gvGender.DataPropertyName = "gvGender";
+            this.gvGender.DataPropertyName = "Gender";
             this.gvGender.HeaderText = "Gender";
             this.gvGender.Name = "gvGender";
             // 
             // gvMarried
             // 
-            this.gvMarried.DataPropertyName = "gvMarried";
+            this.gvMarried.DataPropertyName = "Married";
             this.gvMarried.HeaderText = "Married";
             this.gvMarried.Name = "gvMarried";
             // 
             // gvBirthday
             // 
-            this.gvBirthday.DataPropertyName = "gvBirthday";
+            this.gvBirthday.DataPropertyName = "Birthday";
             this.gvBirthday.HeaderText = "Birthday";
             this.gvBirthday.Name = "gvBirthday";
             // 
