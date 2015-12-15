@@ -135,25 +135,25 @@
             // 
             // gvName
             // 
-            this.gvName.DataPropertyName = "Name";
+            this.gvName.DataPropertyName = "gvName";
             this.gvName.HeaderText = "Name";
             this.gvName.Name = "gvName";
             // 
             // gvGender
             // 
-            this.gvGender.DataPropertyName = "Gender";
+            this.gvGender.DataPropertyName = "gvGender";
             this.gvGender.HeaderText = "Gender";
             this.gvGender.Name = "gvGender";
             // 
             // gvMarried
             // 
-            this.gvMarried.DataPropertyName = "Married";
+            this.gvMarried.DataPropertyName = "gvMarried";
             this.gvMarried.HeaderText = "Married";
             this.gvMarried.Name = "gvMarried";
             // 
             // gvBirthday
             // 
-            this.gvBirthday.DataPropertyName = "Birthday";
+            this.gvBirthday.DataPropertyName = "gvBirthday";
             this.gvBirthday.HeaderText = "Birthday";
             this.gvBirthday.Name = "gvBirthday";
             // 
@@ -190,11 +190,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gvbtnDel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gvName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gvGender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gvMarried;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvBirthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gvMarried;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gvGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gvName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gvbtnDel;
     }
 }
 
