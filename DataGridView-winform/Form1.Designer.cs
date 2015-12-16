@@ -23,12 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.gvSample = new System.Windows.Forms.DataGridView();
-            this.gvbtnDel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gvGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gvMarried = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gvBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
@@ -37,52 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.gvSample = new System.Windows.Forms.DataGridView();
+            this.gvbtnDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvMarried = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvSample)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gvSample
-            // 
-            this.gvSample.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSample.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.gvbtnDel,
-            this.gvName,
-            this.gvGender,
-            this.gvMarried,
-            this.gvBirthday});
-            this.gvSample.Location = new System.Drawing.Point(12, 147);
-            this.gvSample.Name = "gvSample";
-            this.gvSample.RowTemplate.Height = 24;
-            this.gvSample.Size = new System.Drawing.Size(663, 292);
-            this.gvSample.TabIndex = 0;
-            // 
-            // gvbtnDel
-            // 
-            this.gvbtnDel.HeaderText = "Action";
-            this.gvbtnDel.Name = "gvbtnDel";
-            // 
-            // gvName
-            // 
-            this.gvName.DataPropertyName = "Name";
-            this.gvName.HeaderText = "Name";
-            this.gvName.Name = "gvName";
-            // 
-            // gvGender
-            // 
-            this.gvGender.DataPropertyName = "Gender";
-            this.gvGender.HeaderText = "Gender";
-            this.gvGender.Name = "gvGender";
-            // 
-            // gvMarried
-            // 
-            this.gvMarried.DataPropertyName = "Married";
-            this.gvMarried.HeaderText = "Married";
-            this.gvMarried.Name = "gvMarried";
-            // 
-            // gvBirthday
-            // 
-            this.gvBirthday.DataPropertyName = "Birthday";
-            this.gvBirthday.HeaderText = "Birthday";
-            this.gvBirthday.Name = "gvBirthday";
             // 
             // button1
             // 
@@ -92,6 +48,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Add New";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtName
             // 
@@ -103,10 +60,14 @@
             // cbGender
             // 
             this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.cbGender.Location = new System.Drawing.Point(120, 50);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(138, 20);
             this.cbGender.TabIndex = 3;
+            this.cbGender.Text = "Male";
             // 
             // ckMarried
             // 
@@ -157,6 +118,56 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Birthday";
             // 
+            // gvSample
+            // 
+            this.gvSample.AllowUserToAddRows = false;
+            this.gvSample.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvSample.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvbtnDel,
+            this.gvName,
+            this.gvGender,
+            this.gvMarried,
+            this.gvBirthday});
+            this.gvSample.Location = new System.Drawing.Point(12, 147);
+            this.gvSample.Name = "gvSample";
+            this.gvSample.RowTemplate.Height = 24;
+            this.gvSample.Size = new System.Drawing.Size(663, 292);
+            this.gvSample.TabIndex = 0;
+            this.gvSample.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSample_CellContentClick);
+            // 
+            // gvbtnDel
+            // 
+            this.gvbtnDel.HeaderText = "Action";
+            this.gvbtnDel.Name = "gvbtnDel";
+            this.gvbtnDel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvbtnDel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.gvbtnDel.Text = "Del";
+            this.gvbtnDel.UseColumnTextForButtonValue = true;
+            // 
+            // gvName
+            // 
+            this.gvName.DataPropertyName = "Name";
+            this.gvName.HeaderText = "Name";
+            this.gvName.Name = "gvName";
+            // 
+            // gvGender
+            // 
+            this.gvGender.DataPropertyName = "Gender";
+            this.gvGender.HeaderText = "Gender";
+            this.gvGender.Name = "gvGender";
+            // 
+            // gvMarried
+            // 
+            this.gvMarried.DataPropertyName = "Married";
+            this.gvMarried.HeaderText = "Married";
+            this.gvMarried.Name = "gvMarried";
+            // 
+            // gvBirthday
+            // 
+            this.gvBirthday.DataPropertyName = "Birthday";
+            this.gvBirthday.HeaderText = "Birthday";
+            this.gvBirthday.Name = "gvBirthday";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -194,7 +205,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gvMarried;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gvbtnDel;
+        private System.Windows.Forms.DataGridViewButtonColumn gvbtnDel;
     }
 }
 

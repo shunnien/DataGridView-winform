@@ -38,6 +38,23 @@ namespace DataGridView_winform {
         private void gvInit() {
             gvSample.DataSource = dt;
         }
+        
 
+
+        private void gvSample_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+            // 指定第 0 列，刪除按鈕的所在列
+            if (e.ColumnIndex == 0) {
+                (sender as DataGridView).Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            DataRow dr = dt.NewRow();
+            dr["Name"] = txtName.Text.Trim();
+            dr["Gender"] = cbGender.SelectedItem;
+            dr["Married"] = ckMarried.Checked ? 1 : 0;
+            dr["Birthday"] = dtpBirthday.Value;
+            dt.Rows.Add(dr);
+        }
     }
 }
