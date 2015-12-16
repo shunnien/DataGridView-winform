@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
@@ -121,6 +122,9 @@
             // gvSample
             // 
             this.gvSample.AllowUserToAddRows = false;
+            this.gvSample.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gvSample.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvSample.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvSample.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gvbtnDel,
@@ -129,8 +133,10 @@
             this.gvMarried,
             this.gvBirthday});
             this.gvSample.Location = new System.Drawing.Point(12, 147);
+            this.gvSample.MultiSelect = false;
             this.gvSample.Name = "gvSample";
             this.gvSample.RowTemplate.Height = 24;
+            this.gvSample.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvSample.Size = new System.Drawing.Size(663, 292);
             this.gvSample.TabIndex = 0;
             this.gvSample.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSample_CellContentClick);
