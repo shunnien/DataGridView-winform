@@ -36,7 +36,7 @@
             this.gvbtnDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gvGender = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.gvMarried = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvMarried = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gvBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvSample)).BeginInit();
             this.SuspendLayout();
@@ -170,8 +170,13 @@
             // gvMarried
             // 
             this.gvMarried.DataPropertyName = "Married";
+            this.gvMarried.FalseValue = "0";
             this.gvMarried.HeaderText = "Married";
+            this.gvMarried.IndeterminateValue = "0";
             this.gvMarried.Name = "gvMarried";
+            this.gvMarried.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvMarried.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.gvMarried.TrueValue = "1";
             // 
             // gvBirthday
             // 
@@ -213,7 +218,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvBirthday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gvMarried;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn gvMarried;
         private System.Windows.Forms.DataGridViewComboBoxColumn gvGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvName;
         private System.Windows.Forms.DataGridViewButtonColumn gvbtnDel;
