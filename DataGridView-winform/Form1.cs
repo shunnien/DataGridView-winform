@@ -20,10 +20,14 @@ namespace DataGridView_winform {
                 table.Columns.Add("Birthday", typeof(DateTime));
 
                 // Add rows.
-                table.Rows.Add("Allen", "Male", 0, DateTime.Now);
-                table.Rows.Add("Kevin", "Male", 1, DateTime.Now);
-                table.Rows.Add("Dean", "Male", 0, DateTime.Today);
-                table.Rows.Add("Jenny", "Female", 1, DateTime.Today);
+                //table.Rows.Add("Allen", "Male", 0, DateTime.Now);
+                //table.Rows.Add("Kevin", "Male", 1, DateTime.Now);
+                //table.Rows.Add("Dean", "Male", 0, DateTime.Today);
+                //table.Rows.Add("Jenny", "Female", 1, DateTime.Today);
+                table.Rows.Add("Allen", "1", 0, DateTime.Now);
+                table.Rows.Add("Kevin", "1", 1, DateTime.Now);
+                table.Rows.Add("Dean", "1", 0, DateTime.Today);
+                table.Rows.Add("Jenny", "0", 1, DateTime.Today);
                 return table;
             }
         }
@@ -37,14 +41,16 @@ namespace DataGridView_winform {
 
         private void gvInit() {
             gvGender.Items.Clear();
-            gvGender.Items.AddRange(new object[] {
-                "Male",
-                "Female",
-                "test"});
+
+            gvGender.Items.Add(new ComboData("Male", "1"));
+            gvGender.Items.Add(new ComboData("Female", "0"));
+            gvGender.Items.Add(new ComboData("test", "2"));
+            gvGender.DisplayMember = "Display";
+            gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
         }
 
-
+        
 
         private void gvSample_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             // 指定第 0 列，刪除按鈕的所在列
@@ -61,5 +67,17 @@ namespace DataGridView_winform {
             dr["Birthday"] = dtpBirthday.Value;
             dt.Rows.Add(dr);
         }
+    }
+
+    /// <summary>
+    /// comboBox Items
+    /// </summary>
+    public class ComboData {
+        public ComboData(string text, string value) {
+            Display = text;
+            Value = value;
+        }
+        public string Display { get; set; }
+        public string Value { get; set; }
     }
 }
