@@ -20,10 +20,6 @@ namespace DataGridView_winform {
                 table.Columns.Add("Birthday", typeof(DateTime));
 
                 // Add rows.
-                //table.Rows.Add("Allen", "Male", 0, DateTime.Now);
-                //table.Rows.Add("Kevin", "Male", 1, DateTime.Now);
-                //table.Rows.Add("Dean", "Male", 0, DateTime.Today);
-                //table.Rows.Add("Jenny", "Female", 1, DateTime.Today);
                 table.Rows.Add("Allen", "1", 0, DateTime.Now);
                 table.Rows.Add("Kevin", "1", 1, DateTime.Now);
                 table.Rows.Add("Dean", "1", 0, DateTime.Today);
@@ -33,8 +29,16 @@ namespace DataGridView_winform {
         }
 
         public DataTable dt;
+        public List<ComboData> cbData = new List<ComboData>() {
+                new ComboData("Male", "1"),
+                new ComboData("Female", "0")
+            };
         public Form1() {
             InitializeComponent();
+            cbGender.DataSource = cbData;
+            cbGender.DisplayMember = "Display";
+            cbGender.ValueMember = "Value";
+
             dt = dt ?? sampleData();
             gvInit();
         }
@@ -42,15 +46,11 @@ namespace DataGridView_winform {
         private void gvInit() {
             gvGender.Items.Clear();
 
-            gvGender.Items.Add(new ComboData("Male", "1"));
-            gvGender.Items.Add(new ComboData("Female", "0"));
-            gvGender.Items.Add(new ComboData("test", "2"));
+            gvGender.DataSource = cbData;
             gvGender.DisplayMember = "Display";
             gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
         }
-
-        
 
         private void gvSample_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             // 指定第 0 列，刪除按鈕的所在列
@@ -62,7 +62,7 @@ namespace DataGridView_winform {
         private void button1_Click(object sender, EventArgs e) {
             DataRow dr = dt.NewRow();
             dr["Name"] = txtName.Text.Trim();
-            dr["Gender"] = cbGender.SelectedItem;
+            dr["Gender"] = cbGender.SelectedValue;
             dr["Married"] = ckMarried.Checked ? 1 : 0;
             dr["Birthday"] = dtpBirthday.Value;
             dt.Rows.Add(dr);
