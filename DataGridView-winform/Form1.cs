@@ -36,9 +36,14 @@ namespace DataGridView_winform {
         }
 
         private void gvInit() {
+            gvGender.Items.Clear();
+            gvGender.Items.AddRange(new object[] {
+                "Male",
+                "Female",
+                "test"});
             gvSample.DataSource = dt;
         }
-        
+
 
 
         private void gvSample_CellContentClick(object sender, DataGridViewCellEventArgs e) {
