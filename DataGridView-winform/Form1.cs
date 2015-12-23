@@ -101,6 +101,10 @@ namespace DataGridView_winform {
             dr["Birthday"] = dtpBirthday.Value;
             dt.Rows.Add(dr);
         }
+
+        private void cbGender_SelectedIndexChanged(object sender, EventArgs e) {
+            cbDesBind(cbDes, (sender as ComboBox).Text);
+        }
     }
 
     /// <summary>

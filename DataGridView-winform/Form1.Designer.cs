@@ -71,6 +71,7 @@
             this.cbGender.Size = new System.Drawing.Size(138, 20);
             this.cbGender.TabIndex = 3;
             this.cbGender.Text = "Male";
+            this.cbGender.SelectedIndexChanged += new System.EventHandler(this.cbGender_SelectedIndexChanged);
             // 
             // ckMarried
             // 
