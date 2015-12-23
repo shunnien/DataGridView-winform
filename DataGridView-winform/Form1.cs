@@ -15,7 +15,7 @@ namespace DataGridView_winform {
             using (DataTable table = new DataTable()) {
                 // Add columns.
                 table.Columns.Add("Name", typeof(string));
-                table.Columns.Add("Gender", typeof(string));
+                table.Columns.Add("Gender", typeof(int));
                 table.Columns.Add("Married", typeof(int));
                 table.Columns.Add("Birthday", typeof(DateTime));
 
