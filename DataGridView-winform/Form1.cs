@@ -73,11 +73,11 @@ namespace DataGridView_winform {
     /// comboBox Items
     /// </summary>
     public class ComboData {
-        public ComboData(string text, string value) {
+        public ComboData(string text, int value) {
             Display = text;
             Value = value;
         }
         public string Display { get; set; }
-        public string Value { get; set; }
+        public int Value { get; set; }
     }
 }
