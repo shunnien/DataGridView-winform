@@ -20,18 +20,18 @@ namespace DataGridView_winform {
                 table.Columns.Add("Birthday", typeof(DateTime));
 
                 // Add rows.
-                table.Rows.Add("Allen", "1", 0, DateTime.Now);
-                table.Rows.Add("Kevin", "1", 1, DateTime.Now);
-                table.Rows.Add("Dean", "1", 0, DateTime.Today);
-                table.Rows.Add("Jenny", "0", 1, DateTime.Today);
+                table.Rows.Add("Allen", 1, 0, DateTime.Now);
+                table.Rows.Add("Kevin", 1, 1, DateTime.Now);
+                table.Rows.Add("Dean", 1, 0, DateTime.Today);
+                table.Rows.Add("Jenny", 0, 1, DateTime.Today);
                 return table;
             }
         }
 
         public DataTable dt;
         public List<ComboData> cbData = new List<ComboData>() {
-                new ComboData("Male", "1"),
-                new ComboData("Female", "0")
+                new ComboData("Male", 1),
+                new ComboData("Female", 0)
             };
         public Form1() {
             InitializeComponent();
