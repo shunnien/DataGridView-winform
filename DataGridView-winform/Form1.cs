@@ -18,12 +18,13 @@ namespace DataGridView_winform {
                 table.Columns.Add("Gender", typeof(int));
                 table.Columns.Add("Married", typeof(int));
                 table.Columns.Add("Birthday", typeof(DateTime));
+                table.Columns.Add("Des", typeof(int));
 
                 // Add rows.
-                table.Rows.Add("Allen", 1, 0, DateTime.Now);
-                table.Rows.Add("Kevin", 1, 1, DateTime.Now);
-                table.Rows.Add("Dean", 1, 0, DateTime.Today);
-                table.Rows.Add("Jenny", 0, 1, DateTime.Today);
+                table.Rows.Add("Allen", 1, 0, DateTime.Now, 1);
+                table.Rows.Add("Kevin", 1, 1, DateTime.Now, 2);
+                table.Rows.Add("Dean", 1, 0, DateTime.Today, 3);
+                table.Rows.Add("Jenny", 0, 1, DateTime.Today, 1);
                 return table;
             }
         }
