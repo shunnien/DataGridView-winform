@@ -38,7 +38,9 @@ namespace DataGridView_winform {
             cbGender.DataSource = cbData;
             cbGender.DisplayMember = "Display";
             cbGender.ValueMember = "Value";
-
+            cbDes.DisplayMember = "Display";
+            cbDes.ValueMember = "Value";
+            cbDesBind(cbDes, "Male");
             dt = dt ?? sampleData();
             gvInit();
         }
@@ -57,6 +59,38 @@ namespace DataGridView_winform {
             if (e.ColumnIndex == 0) {
                 (sender as DataGridView).Rows.RemoveAt(e.RowIndex);
             }
+        }
+
+        /// <summary>
+        /// comboBox cbDesc datasource bind.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="selVal">The sel value.</param>
+        private void cbDesBind(dynamic sender, string selVal) {
+            List<ComboData> listDes = new List<ComboData>();
+            switch (selVal.Trim()) {
+                case "Male":
+                    listDes.Add(new ComboData("Handsome", 1));
+                    listDes.Add(new ComboData("Nuttiness", 2));
+                    listDes.Add(new ComboData("Polite", 3));
+                    listDes.Add(new ComboData("Burly", 4));
+                    break;
+                case "Female":
+                    listDes.Add(new ComboData("Beautiful", 1));
+                    listDes.Add(new ComboData("Sexy", 2));
+                    listDes.Add(new ComboData("Cute", 3));
+                    break;
+                default:
+                    listDes.Add(new ComboData("Handsome", 1));
+                    listDes.Add(new ComboData("Nuttiness", 2));
+                    listDes.Add(new ComboData("Polite", 3));
+                    listDes.Add(new ComboData("Burly", 4));
+                    listDes.Add(new ComboData("Beautiful", 5));
+                    listDes.Add(new ComboData("Sexy", 6));
+                    listDes.Add(new ComboData("Cute", 7));
+                    break;
+            }
+            sender.DataSource = listDes;
         }
 
         private void button1_Click(object sender, EventArgs e) {
