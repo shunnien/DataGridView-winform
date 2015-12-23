@@ -38,6 +38,8 @@
             this.gvGender = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.gvMarried = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gvBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbDes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvSample)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +186,31 @@
             this.gvBirthday.HeaderText = "Birthday";
             this.gvBirthday.Name = "gvBirthday";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(310, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Description";
+            // 
+            // cbDes
+            // 
+            this.cbDes.FormattingEnabled = true;
+            this.cbDes.Location = new System.Drawing.Point(411, 115);
+            this.cbDes.Name = "cbDes";
+            this.cbDes.Size = new System.Drawing.Size(138, 20);
+            this.cbDes.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 451);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbDes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -222,6 +244,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn gvGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn gvName;
         private System.Windows.Forms.DataGridViewButtonColumn gvbtnDel;
+        private System.Windows.Forms.ComboBox cbDes;
+        private System.Windows.Forms.Label label3;
     }
 }
 
