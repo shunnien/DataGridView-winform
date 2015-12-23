@@ -48,7 +48,15 @@ namespace DataGridView_winform {
 
         private void gvInit() {
             gvGender.Items.Clear();
-
+            DataGridViewComboBoxColumn cb = new DataGridViewComboBoxColumn() {
+                Name = "gvDes",
+                DataPropertyName = "Des",
+                HeaderText = "Des",
+                DisplayMember = "Display",
+                ValueMember = "Value"
+            };
+            cbDesBind(cb, "");
+            gvSample.Columns.Add(cb);
             gvGender.DataSource = cbData;
             gvGender.DisplayMember = "Display";
             gvGender.ValueMember = "Value";
