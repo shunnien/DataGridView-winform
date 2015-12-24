@@ -111,6 +111,7 @@ namespace DataGridView_winform {
             dr["Gender"] = cbGender.SelectedValue;
             dr["Married"] = ckMarried.Checked ? 1 : 0;
             dr["Birthday"] = dtpBirthday.Value;
+            dr["Des"] = cbDes.SelectedValue;
             dt.Rows.Add(dr);
         }
 
@@ -123,7 +124,6 @@ namespace DataGridView_winform {
             if (((DataGridView)sender).Columns[((DataGridView)sender).CurrentCell.ColumnIndex].Name == "gvGender") {
                 ComboBox cb = e.Control as ComboBox;
                 if (cb != null) {
-                    //cb.SelectionChangeCommitted -= new EventHandler(cb_SelectedIndexChanged);
                     // 增加事件
                     cb.SelectionChangeCommitted += new EventHandler(cb_SelectedIndexChanged);
                 }
