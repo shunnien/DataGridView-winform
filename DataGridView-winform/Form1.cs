@@ -117,6 +117,10 @@ namespace DataGridView_winform {
         private void cbGender_SelectedIndexChanged(object sender, EventArgs e) {
             cbDesBind(cbDes, (sender as ComboBox).Text);
         }
+
+        private void gvSample_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e) {
+
+        }
     }
 
     /// <summary>

@@ -143,6 +143,7 @@
             this.gvSample.Size = new System.Drawing.Size(663, 292);
             this.gvSample.TabIndex = 0;
             this.gvSample.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSample_CellContentClick);
+            this.gvSample.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gvSample_EditingControlShowing);
             // 
             // gvbtnDel
             // 
