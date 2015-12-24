@@ -57,7 +57,7 @@ namespace DataGridView_winform {
             };
             cbDesBind(cb, "");
             gvSample.Columns.Add(cb);
-            gvGender.DataSource = cbData;
+            gvGender.DataSource = cbData.Select(q=> q).ToList();
             gvGender.DisplayMember = "Display";
             gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
