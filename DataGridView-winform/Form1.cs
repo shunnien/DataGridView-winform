@@ -119,7 +119,35 @@ namespace DataGridView_winform {
         }
 
         private void gvSample_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e) {
+            // 判斷觸發事件的欄位是 Gender 才進行以下動作
+            if (((DataGridView)sender).Columns[((DataGridView)sender).CurrentCell.ColumnIndex].Name == "gvGender") {
+                ComboBox cb = e.Control as ComboBox;
+                if (cb != null) {
+                    //cb.SelectionChangeCommitted -= new EventHandler(cb_SelectedIndexChanged);
+                    // 增加事件
+                    cb.SelectionChangeCommitted += new EventHandler(cb_SelectedIndexChanged);
+                }
+            }
+        }
 
+        private void cb_SelectedIndexChanged(object sender, EventArgs e) {
+            // 取得現在欄位索引
+            int columnIndex = gvSample.CurrentCell.ColumnIndex;
+            // 將控制項轉給 ComboBox
+            ComboBox cbx = sender as ComboBox;
+            // 判斷現在選取的 Column 是 Gender
+            if (gvSample.Columns[columnIndex].Name == "gvGender") {
+                string selTxt = cbx.Text,
+                selVal = cbx.SelectedValue.ToString();
+                // 當選取項目值和顯示文字任一為空，就不進行動作
+                if (string.IsNullOrEmpty(selTxt) || string.IsNullOrEmpty(selVal)) return;
+                // 將此列資料的 Des Cell　取出
+                // 其 DataType 為 DataGridViewCell 
+                // 將其強制轉換為 DataGridViewComboBoxCell
+                var targetCbx = gvSample.CurrentRow.Cells["gvDes"] as DataGridViewComboBoxCell;
+                // 綁定資料
+                cbDesBind(targetCbx, selTxt);
+            }
         }
     }
 
