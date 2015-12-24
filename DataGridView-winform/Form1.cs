@@ -46,6 +46,9 @@ namespace DataGridView_winform {
             gvInit();
         }
 
+        /// <summary>
+        /// DataGridView the initialize.
+        /// </summary>
         private void gvInit() {
             gvGender.Items.Clear();
             DataGridViewComboBoxColumn cb = new DataGridViewComboBoxColumn() {
