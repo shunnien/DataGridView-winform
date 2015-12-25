@@ -60,7 +60,7 @@ namespace DataGridView_winform {
             };
             cbDesBind(cb, "");
             gvSample.Columns.Add(cb);
-            gvGender.DataSource = cbData.Select(q=> q).ToList();
+            gvGender.DataSource = cbData.Select(q => q).ToList();
             gvGender.DisplayMember = "Display";
             gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
@@ -157,6 +157,19 @@ namespace DataGridView_winform {
                 var targetCbx = gvSample.CurrentRow.Cells["gvDes"] as DataGridViewComboBoxCell;
                 // 綁定資料
                 cbDesBind(targetCbx, selTxt);
+            }
+        }
+
+        private void gvSample_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e) {
+            // DataGridViewComboBoxCell gvDes dynamic databinding
+            var dgv = sender as DataGridView;
+            if (dgv.Rows.Count > 0 && dgv.Columns.Count > 5) {
+                foreach (var dgvr in dgv.Rows) {
+                    var targetCell = ((DataGridViewRow)dgvr).Cells["gvDes"] as DataGridViewComboBoxCell;
+                    var genderCell = ((DataGridViewRow)dgvr).Cells["gvGender"] as DataGridViewComboBoxCell;
+                    if (targetCell == null) continue;
+                    cbDesBind(targetCell, genderCell.FormattedValue.ToString());
+                }
             }
         }
     }
