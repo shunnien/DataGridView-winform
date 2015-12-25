@@ -43,7 +43,6 @@ namespace DataGridView_winform {
             cbDes.ValueMember = "Value";
             cbDesBind(cbDes, "Male");
             dt = dt ?? sampleData();
-            gvInit();
         }
 
         /// <summary>
@@ -157,6 +156,10 @@ namespace DataGridView_winform {
                 // 綁定資料
                 cbDesBind(targetCbx, selTxt);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            gvInit();
         }
     }
 
