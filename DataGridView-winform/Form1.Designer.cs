@@ -224,7 +224,6 @@
             this.Controls.Add(this.gvSample);
             this.Name = "Form1";
             this.Text = "DataGridView Usage";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvSample)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

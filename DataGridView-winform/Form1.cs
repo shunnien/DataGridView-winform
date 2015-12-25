@@ -167,10 +167,6 @@ namespace DataGridView_winform {
                 cbDesBind(targetCbx, selTxt);
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e) {
-            gvInit();
-        }
     }
 
     /// <summary>
