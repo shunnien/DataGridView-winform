@@ -91,17 +91,20 @@ namespace DataGridView_winform {
             List<ComboData> listDes = new List<ComboData>();
             switch (selVal.Trim()) {
                 case "Male":
+                    listDes.Add(new ComboData("Select...", 0));
                     listDes.Add(new ComboData("Handsome", 1));
                     listDes.Add(new ComboData("Nuttiness", 2));
                     listDes.Add(new ComboData("Polite", 3));
                     listDes.Add(new ComboData("Burly", 4));
                     break;
                 case "Female":
+                    listDes.Add(new ComboData("Select...", 0));
                     listDes.Add(new ComboData("Beautiful", 1));
                     listDes.Add(new ComboData("Sexy", 2));
                     listDes.Add(new ComboData("Cute", 3));
                     break;
                 default:
+                    listDes.Add(new ComboData("Select...", 0));
                     listDes.Add(new ComboData("Handsome", 1));
                     listDes.Add(new ComboData("Nuttiness", 2));
                     listDes.Add(new ComboData("Polite", 3));
@@ -110,6 +113,12 @@ namespace DataGridView_winform {
                     listDes.Add(new ComboData("Sexy", 6));
                     listDes.Add(new ComboData("Cute", 7));
                     break;
+            }
+            if (sender.GetType().Name == "DataGridViewComboBoxCell") {
+                var cb = (DataGridViewComboBoxCell)sender;
+                if (!listDes.Any(q => q.Value == (int)cb.Value)) {
+                    cb.Value = 0;
+                }
             }
             sender.DataSource = listDes;
         }
