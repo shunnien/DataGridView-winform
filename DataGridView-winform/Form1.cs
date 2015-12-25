@@ -63,6 +63,7 @@ namespace DataGridView_winform {
             gvGender.DisplayMember = "Display";
             gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
+            gvSample.EditMode = DataGridViewEditMode.EditOnEnter;
 
             // DataGridViewComboBoxCell gvDes dynamic databinding
             foreach (var dgvr in gvSample.Rows) {
