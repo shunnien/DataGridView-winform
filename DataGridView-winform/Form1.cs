@@ -64,6 +64,15 @@ namespace DataGridView_winform {
             gvGender.DisplayMember = "Display";
             gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
+
+            // DataGridViewComboBoxCell gvDes dynamic databinding
+            foreach (var dgvr in gvSample.Rows) {
+                var targetCell = ((DataGridViewRow)dgvr).Cells["gvDes"] as DataGridViewComboBoxCell;
+                var genderCell = ((DataGridViewRow)dgvr).Cells["gvGender"] as DataGridViewComboBoxCell;
+                ((DataGridViewRow)dgvr).Cells["gvName"].ReadOnly = true;
+                if (targetCell == null) continue;
+                cbDesBind(targetCell, genderCell.FormattedValue.ToString());
+            }
         }
 
         private void gvSample_CellContentClick(object sender, DataGridViewCellEventArgs e) {
