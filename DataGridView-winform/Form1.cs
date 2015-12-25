@@ -43,6 +43,7 @@ namespace DataGridView_winform {
             cbDes.ValueMember = "Value";
             cbDesBind(cbDes, "Male");
             dt = dt ?? sampleData();
+            gvInit();
         }
 
         /// <summary>
@@ -64,15 +65,6 @@ namespace DataGridView_winform {
             gvGender.ValueMember = "Value";
             gvSample.DataSource = dt;
             gvSample.EditMode = DataGridViewEditMode.EditOnEnter;
-
-            // DataGridViewComboBoxCell gvDes dynamic databinding
-            foreach (var dgvr in gvSample.Rows) {
-                var targetCell = ((DataGridViewRow)dgvr).Cells["gvDes"] as DataGridViewComboBoxCell;
-                var genderCell = ((DataGridViewRow)dgvr).Cells["gvGender"] as DataGridViewComboBoxCell;
-                ((DataGridViewRow)dgvr).Cells["gvName"].ReadOnly = true;
-                if (targetCell == null) continue;
-                cbDesBind(targetCell, genderCell.FormattedValue.ToString());
-            }
         }
 
         private void gvSample_CellContentClick(object sender, DataGridViewCellEventArgs e) {
